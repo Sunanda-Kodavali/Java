@@ -3,23 +3,28 @@ import java.util.Scanner;
 public class LeapYear {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        boolean b = isLeapYear(a);
-        if(b){
+        int InYear = sc.nextInt();
+        boolean leapOrNot = isLeapYear(InYear);
+        if(leapOrNot){
             System.out.println("Its a Leap Year");
         }else{
             System.out.println("Its not a Leap Year");
         }
     }
-    public static boolean isLeapYear(int a){
-        boolean x = false;
-        if(a % 4 == 0){
-            if(((a % 100) != 0) || ((a % 400) == 0)){
-                x = true;
-                System.out.println((a % 400));
-                System.out.println((a % 100));
+    public static boolean isLeapYear(int year){
+        boolean leap = false;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
             }
+            else
+                leap = true;
         }
-        return x;
+        else
+            leap = false;
+        return leap;
     }
 }
