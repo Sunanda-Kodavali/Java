@@ -7,21 +7,24 @@ public class SquareFrame {
         System.out.println("Enter a line:");
         String line = scanner.nextLine();
         String[] words = line.split(" ");
-        int maxLength = 0;
+        int maxLen = 0;
         for (String word : words) {
-            if (word.length() > maxLength) {
-                maxLength = word.length();
+            if (word.length() > maxLen) {
+                maxLen = word.length();
             }
         }
-        printStar(maxLength + 4);
+        printStar(maxLen + 4);
+
         for (String word : words) {
             System.out.print("* " + word);
-            for (int i = 0; i < maxLength - word.length(); i++) {
+            int n = maxLen - word.length();
+            for (int i = 0; i < n; i++) {
                 System.out.print(" ");
             }
             System.out.println(" *");
         }
-        printStar(maxLength + 4);
+
+        printStar(maxLen + 4);
     }
 
     public static void printStar(int length) {
