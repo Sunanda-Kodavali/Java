@@ -1,3 +1,5 @@
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class SquareFrame {
@@ -7,14 +9,15 @@ public class SquareFrame {
         System.out.println("Enter a line:");
         String line = scanner.nextLine();
         String[] words = line.split(" ");
-        int maxLen = 0;
-        for (String word : words) {
-            if (word.length() > maxLen) {
-                maxLen = word.length();
-            }
-        }
-        printStar(maxLen + 4);
 
+
+        int maxLen = maxWordLength(words);
+        printStar(maxLen + 4);
+        frameSquareWords(words, maxLen);
+        printStar(maxLen + 4);
+    }
+
+    private static void frameSquareWords(String[] words, int maxLen) {
         for (String word : words) {
             System.out.print("* " + word);
             int n = maxLen - word.length();
@@ -23,8 +26,16 @@ public class SquareFrame {
             }
             System.out.println(" *");
         }
+    }
 
-        printStar(maxLen + 4);
+    private static int maxWordLength(String[] words) {
+        int maxLen = 0;
+        for (String word : words) {
+            if (word.length() > maxLen) {
+                maxLen = word.length();
+            }
+        }
+        return maxLen;
     }
 
     public static void printStar(int length) {

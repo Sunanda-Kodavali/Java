@@ -7,7 +7,7 @@ public class Triangles_extraexc {
         int n = sc.nextInt();
        // printTriangles(n);
       //  printTriangleNumbers(n);
-         // printXmasTree(n);
+          printXmasTree(n);
 
 
     }
