@@ -28,9 +28,15 @@ public class Main {
         printMovieDetails(movie1);
 
         // Task3 in Excercises
+        Book book3 = new Book();
+        book3.title = "Harry Potter";
+        book3.author = "J. K. Rowling";
+        book3.price = 40;
+
         Book[] books = {
                 book1,
-                book2
+                book2,
+                book3
         };
         for (Book b : books){
             printBookDetails(b);
@@ -55,4 +61,5 @@ public class Main {
     private static void printBookDetails(Book book) {
         System.out.printf("Title: %s, Author: %s, Price: %d\n\n", book.title, book.author, book.price);
     }
+
 }
