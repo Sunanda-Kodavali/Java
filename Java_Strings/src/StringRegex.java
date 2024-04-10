@@ -13,7 +13,7 @@ public class StringRegex {
 
         System.out.println();
 
-        Pattern patternAlphabets = Pattern.compile("[a-zA-Z ]");
+        Pattern patternAlphabets = Pattern.compile("[A-Za-zÀ-ÿ ]");
         Matcher matcherAlphabets = patternAlphabets.matcher(mixed);
         while(matcherAlphabets.find()){
             System.out.print(matcherAlphabets.group());

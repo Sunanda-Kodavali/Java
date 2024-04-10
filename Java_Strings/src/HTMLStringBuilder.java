@@ -4,7 +4,11 @@ public class HTMLStringBuilder {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("<table>\n");
         for(int i = 0; i < names.length; i++) {
-            stringBuilder.append("\t<tr style='background-color:green;color:white;'>\n");
+             if((i+1)%2 == 0){
+                stringBuilder.append("\t<tr style='background-color:yellow;color:black;'>\n");
+            }else {
+                 stringBuilder.append("\t<tr style='background-color:green;color:white;'>\n");
+             }
             stringBuilder.append("\t\t<td>Row ").append(i+1).append(": ").append(names[i]).append("</td>\n");
             stringBuilder.append("\t</tr>\n");
         }
