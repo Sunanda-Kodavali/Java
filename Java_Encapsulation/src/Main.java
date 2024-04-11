@@ -9,24 +9,19 @@ public class Main {
         s.setBirthDate(LocalDate.of(2000, 1, 1));
         System.out.println(s.age());
 
-        Book b1 = new Book("The Immortals of Meluha", "Amish Tripati", 10);
-
-        Book b2 = new Book("The Secret of Nagas", "Amish Tripati", 15);
-
-
-        Movie m1 = new Movie("Harry Potter", MovieGenre.DRAMA, 20);
-
-        Movie m2 = new Movie("Kantara", MovieGenre.ACTION, 30);
-
-        Movie m3 = new Movie("Our Planet", MovieGenre.DOCUMENTARY, 30, "Keith Scholey and Huw Cordey");
-
-        Book[] books = { b1, b2 };
+        Book[] books = {
+                new Book("The Immortals of Meluha", "Amish Tripati", 10),
+                new Book("The Secret of Nagas", "Amish Tripati", 15)
+        };
 
         for (Book b : books) {
             b.printBookDetails();
         }
 
-        Movie[] movies = { m1, m2, m3 };
+        Movie[] movies = { new Movie("Harry Potter", MovieGenre.DRAMA, 20),
+                new Movie("Kantara", MovieGenre.ACTION, 30),
+                new Movie("Our Planet", MovieGenre.DOCUMENTARY, 30, "Keith Scholey and Huw Cordey")
+        };
 
         for (Movie m : movies) {
             m.printMovieDetails();

@@ -11,9 +11,7 @@ public class Movie {
     }
 
     public Movie(String title, MovieGenre genre, int price, String director) {
-        this.title = title;
-        this.genre = genre;
-        this.price = price;
+        this(title, genre, price);
         this.director = director;
     }
 

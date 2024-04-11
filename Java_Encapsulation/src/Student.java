@@ -2,10 +2,6 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class Student {
-    //instance var
-    //property
-    //attribute
-    //member
 
     private String name;
     private LocalDate birthDate;
