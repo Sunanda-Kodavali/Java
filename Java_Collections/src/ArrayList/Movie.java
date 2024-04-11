@@ -1,5 +1,7 @@
 package ArrayList;
 
+import java.util.Map;
+
 public class Movie {
     private String title;
     private MovieGenre genre;
@@ -68,5 +70,12 @@ public class Movie {
         }else{
             System.out.printf("Product Id: %d, Title: %s, Genre: %s, Price: %d\n", productId, title, genre, price);
         }
+    }
+    public static Movie findMovieById(long id, Map<Long, Movie> movieMap){
+
+        if(movieMap.containsKey(id)){
+            return movieMap.get(id);
+        }
+        return  null;
     }
 }

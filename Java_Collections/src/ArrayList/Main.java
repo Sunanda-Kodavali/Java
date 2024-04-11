@@ -25,7 +25,7 @@ public class Main {
         }
 
         long pId = 123L;
-        Movie m =  findMovieById(pId, movieMap);
+        Movie m =  Movie.findMovieById(pId, movieMap);
 
         if(m != null){
             System.out.print("Found this movie: ");
@@ -36,11 +36,5 @@ public class Main {
 
     }
 
-    private static Movie findMovieById(long id, Map<Long, Movie> movieMap){
 
-        if(movieMap.containsKey(id)){
-                return movieMap.get(id);
-        }
-        return  null;
-    }
 }
