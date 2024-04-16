@@ -18,6 +18,6 @@ public class ChildrensBook extends Book {
     @Override
     public String toString() {
         return  super.toString() +
-                ", recommendedAgeInfo='" + recommendedAgeInfo+ '\'';
+                "\nrecommendedAgeInfo: " + recommendedAgeInfo;
     }
 }

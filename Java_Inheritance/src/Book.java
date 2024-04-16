@@ -26,8 +26,9 @@ public class Book extends Product{
 
     @Override
     public String toString() {
-        return "Book" +"\n" + super.toString() +
-                "title='" + title + '\'' +
-                ", author='" + author + '\'';
+        return "---------Book Details---------" +"\n"
+                + super.toString() +
+                "\ntitle: " + title +
+                "\nauthor: " + author;
     }
 }

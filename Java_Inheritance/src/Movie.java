@@ -38,9 +38,10 @@ public class Movie extends Product{
 
     @Override
     public String toString() {
-        return "Movie" + "\n" + super.toString() +
-                "title='" + title + '\'' +
-                ", genre=" + genre +
-                ", director='" + director + '\'';
+        return "---------------Movie Details-----------" + "\n"
+                + super.toString() +
+                "\ntitle: " + title +
+                "\ngenre: " + genre +
+                "\ndirector: " + director;
     }
 }
