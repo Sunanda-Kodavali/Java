@@ -1,16 +1,19 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.OptionalDouble;
+import java.util.stream.DoubleStream;
 
 public class Task9_AverageIntegers {
     public static void main(String[] args) {
-        List<Integer> integerList = new ArrayList<>();
-        integerList.add(5);
-        integerList.add(-4);
-        integerList.add(2);
-        integerList.add(10);
-        integerList.add(-1);
-        OptionalDouble avg = integerList.stream().mapToInt(Integer::intValue).average();
+        List<Integer> integerList = Arrays.asList(5, -4, 2, 8, 10, 1, 2);
+
+  //      double avg = integerList.stream().mapToDouble(Integer::doubleValue).average().orElse(0.0);
+
+
+        DoubleStream doubleStream = DoubleStream.of(5, -4, 2, 8, 10, 1, 2);
+        double avg = doubleStream.average().orElse(0.0);
+
         System.out.println(avg);
     }
 }

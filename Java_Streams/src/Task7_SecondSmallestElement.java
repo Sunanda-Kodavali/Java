@@ -1,18 +1,19 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class Task7_SecondSmallestElement {
     public static void main(String[] args) {
-        List<Integer> integerList = new ArrayList<>();
-        integerList.add(5);
-        integerList.add(-4);
-        integerList.add(2);
-        integerList.add(10);
-        integerList.add(-1);
+        List<Integer> integerList = Arrays.asList(5, -4, 2, 8, 10, 1, 2);
+
+
+//        Optional is generally used as a return type for methods that might not always have a result to return.
+//        For example, a method that looks up a user by ID might not find a match, in which case it would return an empty Optional object.
+//        Optional can help reduce the number of null pointer exceptions in your code as well
+
+
 //        int res = integerList.stream().distinct().sorted(Comparator.naturalOrder()).toList().get(1);
-        Optional<Integer> res = integerList.stream().distinct().sorted().skip(1).findFirst();
+
+
+        Integer res = integerList.stream().distinct().sorted().skip(1).findFirst().orElse(null);
         System.out.println(res);
     }
 }
