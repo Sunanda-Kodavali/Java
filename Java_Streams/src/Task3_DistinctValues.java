@@ -9,7 +9,7 @@ public class Task3_DistinctValues {
 
 //        List<Integer> distinctedList = integerList.stream().distinct().toList();
 
-        List<String> stringList = Arrays.asList("Robin", "Jain", "Ravan", "Akshra");
+        List<String> stringList = Arrays.asList("Robin", "Robin", "Ravan", "Akshra");
 
         List<String> distinctedList = stringList.stream().distinct().toList();
 

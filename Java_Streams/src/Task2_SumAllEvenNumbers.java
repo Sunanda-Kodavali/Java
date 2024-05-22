@@ -16,7 +16,7 @@ public class Task2_SumAllEvenNumbers {
 
 //        int sumOfEvenNumbers = integerList.stream().filter(n -> n % 2 == 0).mapToInt(Integer::intValue).sum();
 
-        int sumOfEvenNumbers = integerList.stream().filter(n -> n % 2 == 0).reduce(0, Integer::sum);
+        int sumOfEvenNumbers = integerList.stream().filter(n -> n % 2 == 0).reduce(10, Integer::sum);
         System.out.println(sumOfEvenNumbers);
     }
 }
