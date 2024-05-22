@@ -15,7 +15,11 @@ public class Main {
         books.add(new Book(3,"Anastasia","",Category.ADVENTURE));
         books.add(new Book(4,"Harry Potter","",Category.MYSTERY));
 
-        List<Character> res =  books.stream().map(book -> Character.toUpperCase(book.title().charAt(0))).distinct().sorted(Comparator.naturalOrder()).toList();
+        List<Character> res =  books.stream()
+                .map(book -> book.title().toUpperCase().charAt(0))
+                .distinct()
+                .sorted()
+                .toList();
 
         System.out.println(res);
     }
