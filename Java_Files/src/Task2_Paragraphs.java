@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Task2_Paragraphs {
 
     public static void main(String[] args) throws URISyntaxException, FileNotFoundException {
-        URL url= Task1_NumberOfSentences.class.getResource("paragraphSample.txt");
+        URL url= Task1_NumberOfSentences.class.getResource("sample.txt");
         File file=new File(url.toURI());
 
         Scanner sc=new Scanner(file);
@@ -27,8 +27,9 @@ public class Task2_Paragraphs {
         }
 
 
-
         System.out.println("No of Sentences: "+sentences.size());
         System.out.println("No of Paragraphs: "+paragraphs.size());
+
+
     }
 }
