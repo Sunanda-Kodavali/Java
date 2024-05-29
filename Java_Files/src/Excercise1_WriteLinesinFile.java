@@ -1,16 +1,11 @@
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Excercise1_WriteLinesinFile {
-    public static void main(String[] args) throws IOException {
-
-//        List<String> stringList = List.of("Apple, Banana, Cat, Dog");
+    public static void main(String[] args) {
 
         List<String> stringList = new ArrayList<>();
         stringList.add("Apple1");
@@ -28,10 +23,10 @@ public class Excercise1_WriteLinesinFile {
                 printWriter.println(s);
             }
             printWriter.close();
+
+//            Files.writeString(Path.of("colors.txt"),stringList.toString());
         }catch (IOException e){
             System.out.println(e.getMessage());
         }
-
-
     }
 }

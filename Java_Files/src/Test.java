@@ -1,30 +1,33 @@
-import java.io.File;
-import java.io.IOException;
+//        Given the file customers-1000.csv
+//
+//        Create a new Customer Class/Record.
+//        Parse the file into a list of customers List<Customer>
+//        How many customers are from France?
+//        How many customers subscribed in 2020?
+//        Try it with with the customers-100000.csv
+
+import java.io.*;
+import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+import java.util.Objects;
 
 public class Test {
     public static void main(String[] args) throws IOException, URISyntaxException {
 
-        URL url= Test.class.getResource("customers-1000.csv");
-        System.out.println(url);
-        File file=new File(url.toURI());
+        BufferedReader br =new BufferedReader(new
+                InputStreamReader(Objects.requireNonNull(Test.class.getClassLoader().getResourceAsStream("customers-100000.csv"))));
 
-        Scanner scanner=new Scanner(file);
         List<Customer> customers = new ArrayList<>();
 
-        int i = 0;
-        while (scanner.hasNextLine()) {
+        String line;
+        br.readLine();
+        while ((line = br.readLine()) != null) {
 
-            if(i == 0){
-                scanner.nextLine();
-            }else {
-
-                String[] inputs = scanner.nextLine().split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+                String[] inputs = line.split(",(?!\\s)");
                 int index = Integer.parseInt(inputs[0]);
                 String customerId = inputs[1];
                 String firstName = inputs[2];
@@ -36,21 +39,20 @@ public class Test {
                 String phone2 = inputs[8];
                 String email = inputs[9];
                 LocalDate subscriptionDate = LocalDate.parse(inputs[10]);
-                URL website = new URL(inputs[11]);
+                URL website = new URI(inputs[11]).toURL();
                 customers.add(new Customer(index, customerId, firstName, lastName, company, city, country, phone1, phone2, email, subscriptionDate, website));
-            }
-            i++;
+
         }
+
         System.out.println("Records added:"+customers.size());
-//        How many customers are from France?
 
         int counter = 0, counter1 = 0;
         for (Customer c: customers){
-            if (c.getCountry().equalsIgnoreCase("France")){
+            if (c.country().equalsIgnoreCase("France")){
                 counter++;
             }
 
-            if(c.getSubscriptionDate().getYear() == 2020){
+            if(c.subscriptionDate().getYear() == 2020){
                 counter1++;
             }
         }
