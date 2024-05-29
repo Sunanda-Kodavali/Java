@@ -10,6 +10,7 @@ import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,9 @@ import java.util.Objects;
 
 public class Test {
     public static void main(String[] args) throws IOException, URISyntaxException {
+
+//        FileReader fr = new FileReader(Path.of(Objects.requireNonNull(FileReadWays.class.getResource("customers-100000.csv")).toURI()).toString());
+//        BufferedReader br =new BufferedReader(fr);
 
         BufferedReader br =new BufferedReader(new
                 InputStreamReader(Objects.requireNonNull(Test.class.getClassLoader().getResourceAsStream("customers-100000.csv"))));

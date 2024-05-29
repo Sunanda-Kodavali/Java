@@ -7,11 +7,7 @@ import java.util.List;
 public class Excercise1_WriteLinesinFile {
     public static void main(String[] args) {
 
-        List<String> stringList = new ArrayList<>();
-        stringList.add("Apple1");
-        stringList.add("Banana1");
-        stringList.add("Cat1");
-        stringList.add("Dog1");
+        List<String> stringList = List.of("Apple2", "Banana2", "Cat2", "Dog2" );
 
         String userHome = System.getProperty("user.home");
         String desktopPath = userHome + "/Desktop";
@@ -24,7 +20,6 @@ public class Excercise1_WriteLinesinFile {
             }
             printWriter.close();
 
-//            Files.writeString(Path.of("colors.txt"),stringList.toString());
         }catch (IOException e){
             System.out.println(e.getMessage());
         }
