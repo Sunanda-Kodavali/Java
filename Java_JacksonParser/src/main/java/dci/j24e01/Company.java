@@ -1,4 +1,4 @@
 package dci.j24e01;
 
-public class Company {
+public record Company(String name, String catchPhrase, String bs) {
 }

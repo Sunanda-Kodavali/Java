@@ -1,4 +1,6 @@
 package dci.j24e01;
 
-public class User {
+public record User(int id, String name, String userName, String email, Address address, String phone, String website,
+                   Company company) {
+
 }

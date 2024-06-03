@@ -1,4 +1,5 @@
 package dci.j24e01;
 
-public class Address {
+public record Address(String street, String suite, String city, String zipcode, GeoLocation geo) {
+
 }

@@ -1,4 +1,5 @@
 package dci.j24e01;
 
-public class GeoLocation {
+public record GeoLocation(String lat, String lng) {
+
 }
