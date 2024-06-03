@@ -32,3 +32,59 @@ Filter out all numbers that are multiples of 3.
 Map each remaining number to its square root.
 Limit the result to the first 10 elements.
 Print the resulting elements and measure the time taken to perform the operations.
+
+
+Exercise 5: Creating a Basic Class
+Concepts: Classes, Objects, Methods, Encapsulation
+Task:
+Create a class named Book with the following private fields:
+String title
+String author
+double price
+Implement getter and setter methods for each field.
+Write a toString method to return a string representation of the book.
+Create a test class with a main method. In this method:
+Create three Book objects.
+Print their details using the toString method.
+
+
+Exercise 6: Inheritance and Method Overriding
+Concepts: Inheritance, Method Overriding
+Task:
+Create a base class Animal with the following:
+A String name field.
+A constructor to initialize the name.
+A method makeSound that prints a generic sound.
+Create two subclasses Dog and Cat that extend Animal:
+Override the makeSound method to print specific sounds ("Bark" for Dog and "Meow" for Cat).
+In the test class main method:
+Create instances of Dog and Cat.
+Call the makeSound method on both instances and observe the overridden behavior.
+
+
+Exercise 7: Polymorphism with Interfaces
+Concepts: Polymorphism, Interfaces
+Task:
+Create an interface Shape with a method double getArea().
+Implement two classes Circle and Rectangle that implement the Shape interface:
+Circle should have a radius field and implement getArea to return the area of the circle.
+Rectangle should have width and height fields and implement getArea to return the area of the rectangle.
+In the test class main method:
+Create instances of Circle and Rectangle.
+Store them in a Shape array.
+Loop through the array and print the area of each shape using the getArea method.
+
+
+Exercise 8: Abstract Classes and Methods
+Concepts: Abstract Classes, Abstract Methods
+Task:
+Create an abstract class Employee with the following:
+A String name field.
+An abstract method double calculateSalary().
+A concrete method getDetails() that prints the employee’s name.
+Create two subclasses SalariedEmployee and HourlyEmployee that extend Employee:
+SalariedEmployee should have a double annualSalary field and implement calculateSalary to return the annual salary.
+HourlyEmployee should have double hourlyRate and int hoursWorked fields and implement calculateSalary to return the product of hourly rate and hours worked.
+In the test class main method:
+Create instances of SalariedEmployee and HourlyEmployee.
+Print their details and calculated salaries.
