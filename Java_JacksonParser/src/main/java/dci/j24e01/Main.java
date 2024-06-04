@@ -2,7 +2,6 @@ package dci.j24e01;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,9 +29,8 @@ public class Main {
 
         List<User> users = new ArrayList<>();
 
-        for (int i = 0; i < rootNode.size(); i++) {
+        for (JsonNode userNode: rootNode) {
 
-            JsonNode userNode = rootNode.get(i);
             User user = addUser(userNode);
             users.add(user);
 
