@@ -1,0 +1,3 @@
+This represents current class object while super represents parent class object, but both extending objectclass
+if you call this.toString() eventhough you dont have that method in child class ,then it will call toString from parent class. you dont need super in this case.
+when you create a constructor in child class, it automatically asks you to call constructor in parent class

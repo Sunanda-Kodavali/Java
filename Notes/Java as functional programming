@@ -1,0 +1,43 @@
+Functional Programming
+
+a function should depend on itself
+
+pue fn ex:
+
+public int sum(int a, int b){
+return a+b;
+} 
+
+a function should not depend externally
+
+
+Lamda fn:
+
+we can either store in a var or pas function as parameter
+
+(params) -> body
+
+
+functional interface:
+
+a interface that has only one method is a functional interface
+
+
+Streams:
+
+are real functional programming
+it has no side effects to the program
+takes input and do cal and gives output
+
+
+List<Movie> sortedMovies = myMovies.stream().sorted((o1, o2) -> o1.getTitle().compareTo(o2.getTitle()).toList();
+
+
+here it doesnt effect myMovies list
+
+
+.sorted
+.filter
+.map()---it changes one form into another   for ex: List<Movie> to List<String> (by getting moviename)
+.forEach
+

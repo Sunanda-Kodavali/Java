@@ -1,0 +1,11 @@
+abstract and final
+
+you cannot create object for abstract class (but you can use ref of it for ex Parent Animal child dog
+
+Animal animal = new Dog();
+
+in this case you can use animal ref) but you can for final class
+you need to implement methods in child class of which has parent abstract class, while final doesnt have to be extended
+
+static and final literally similar
+final and abstract completely opposite

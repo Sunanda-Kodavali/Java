@@ -1,0 +1,10 @@
+Anonymous inner class
+
+
+for ex:
+
+collections.sort(list,comparator{
+compareto
+}
+
+

@@ -1,0 +1,23 @@
+Comparable interface helps us to sort objects
+
+public class Movie implements Product, Comparable<Movie>{
+
+
+@Override
+    public int compareTo(Movie o) {
+
+//        return Long.compare(getProductId(), o.getProductId());
+
+        if(getProductId() ==  o.getProductId()){
+            return 0;
+        } else if(productId < o.getProductId()){
+            return -1;
+        } else {
+            return 1;
+        }
+
+    }
+}
+
+
+Collections.sort(movies);

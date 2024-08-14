@@ -1,0 +1,21 @@
+Polymrphism: ability of showing object in diff forms
+the method that is overriden should be in paren calss, then only polymorphism applies
+for ex:
+
+ List<Animal> pets = new ArrayList<>();
+        pets.add(new Cat());
+        pets.add(new Dog());
+        pets.add(new Dog());
+        pets.add(new Cat());
+
+        for (Animal animal : pets) {
+            animal.communicate();
+        }
+        
+        
+        now animal obj have access to dog and cat communicate overridden methods
+        and it also have its own non overridden methods
+        
+        
+        previously without polymorphism animal have access to animal methods only
+        

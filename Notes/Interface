@@ -1,0 +1,11 @@
+Interface has only public abstract methods (good practice)
+it allows method overloading
+it allows instance variables but you need to intialize them (so dont use)
+
+after java 9
+
+interface allows default and static method implementations in interface
+
+it achieves multiple inheritance
+
+it is perfect ex of data abstraction: showing what is necessary

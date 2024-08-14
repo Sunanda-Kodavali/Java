@@ -1,0 +1,58 @@
+Threads
+
+implements runnable is loosely coupled than extends Thread
+
+program always runs on main thread
+if we run something on new thread
+
+it runs indepently from main thread at same time
+
+run method inside runnable doesnt throw exception
+you need to handle it with try and catch
+
+if you want result of thread
+keep it in functional interface
+
+public interface NetworkServiceCallback {
+    void onResponse(String result);
+}
+in a class
+
+public static void getAsyncData(String url, NetworkServiceCallback callback)  {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                OkHttpClient httpClient = new OkHttpClient();
+                Request request = new Request.Builder()
+                        .url(url)
+                        .build();
+
+                Response response = null;
+                try {
+                    response = httpClient.newCall(request).execute();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
+
+                String result = null;
+                try {
+                    result = response.body().string();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
+                callback.onResponse(result);
+            }
+        }).start();
+    }
+    
+    in main
+    
+    NetworkService.getAsyncData(url, new NetworkServiceCallback() {
+           @Override
+            public void onResponse(String result) {
+                System.out.println("LIST RESULT:::");
+                System.out.println(result);
+            }
+        });

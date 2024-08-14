@@ -1,0 +1,9 @@
+1.
+
+List<? extends Shape> is an example of a bounded wildcard. The ? stands for an unknown type, however, in this case, we know that this unknown type is in fact a subtype of Shape.
+
+
+2.
+
+
+1_00_000 = 100000 in java

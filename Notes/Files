@@ -1,0 +1,20 @@
+Files
+
+Reading- Files, BufferedReader, Scanner
+
+We’ll take a look at three ways you can read a file in Java.
+
+    If you need to perform some ad-hoc reading of a whole file at once, use the Files class.
+    If you need to read in a large file line by line, use a BufferedReader.
+    If you need to read a file with contents separated by some delimiter, use a Scanner.
+
+
+
+
+Writing- Filewriter, PrintWriter, BufferedWriter
+
+et’s take a look at some of Java’s built-in file-writing solutions, and consider which situations they are useful in.
+
+    For a simple, one-time execution, you can use the Files class to write textual data to a file.
+    If your application is designed to write to a file many times, then a BufferedWriter will help eliminate the overhead of slow write operations.
+    If you are writing non-textual data to a file, you could consider using a FileOutputStream optionally wrapped in a BufferedOutputStream.

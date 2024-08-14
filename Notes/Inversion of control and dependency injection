@@ -1,0 +1,33 @@
+Inversion of control
+
+Inverts the control
+
+for ex:
+
+collections.sort(list,comparator{
+compareto
+}
+
+dependency injection is one form of ioc
+
+here above we are injectiong method
+
+
+we can inject object by passing object to constro while creating obj of class
+or while aurowiring
+or using setter method
+
+
+
+
+for ex: we write cose in but seton action handle method
+but it is called by framework. we cannot call handle method
+...that is IOC
+
+
+
+DI:
+
+you can either set an interface in setter method
+or spring autowired
+or passing an interface in class constructor

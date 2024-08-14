@@ -1,0 +1,13 @@
+Record
+
+It automatically creates constructors and getters for you
+
+you can create constructon inside it but you need to call this(..) only
+
+for Ex: Book class
+
+public record Book(int ISBN, String title, String author, Category category) {
+
+}
+
+it means that this class a s a record has parameter constructor and getters and tostring equals hashcode methods
