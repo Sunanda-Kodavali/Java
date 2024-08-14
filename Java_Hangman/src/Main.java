@@ -82,11 +82,6 @@ public class Main {
 
         // compare will return 0 if they are the same
         int result = collator.compare(letterA, letterB);
-
-        if (result == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return result == 0;
     }
 }
