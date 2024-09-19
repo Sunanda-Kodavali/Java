@@ -1,7 +1,7 @@
 package org.example;
 import java.sql.*;
 public class BookStore {
-    public static void buyBook(String title, int quantity) {
+    public static void buyBook(int quantity) {
 
 
 
@@ -16,19 +16,19 @@ public class BookStore {
             conn = DBUtils.getConnection();
             conn.setAutoCommit(false);
 
-            String insertSaleSql = "INSERT INTO sales (book_id, quantity) VALUES ((SELECT book_id FROM books WHERE title = ?), ?)";
+            String insertSaleSql = "INSERT INTO sales (book_id, quantity) VALUES (?, ?)";
 
 
             insertSaleStmt = conn.prepareStatement(insertSaleSql);
-            insertSaleStmt.setString(1, title);
+            insertSaleStmt.setInt(1, 1);
             insertSaleStmt.setInt(2, quantity);
             insertSaleStmt.executeUpdate();
 
-            String updateStockSql = "UPDATE books SET stock = stock - ? WHERE title = ? AND stock >= ?";
+            String updateStockSql = "UPDATE books SET stock = stock - ? WHERE book_id = ? AND stock >= ?";
 
             updateStockStmt = conn.prepareStatement(updateStockSql);
             updateStockStmt.setInt(1, quantity);
-            updateStockStmt.setString(2, title);
+            updateStockStmt.setInt(2, 1);
             updateStockStmt.setInt(3, quantity);
             int rowsUpdated = updateStockStmt.executeUpdate();
 
@@ -65,6 +65,6 @@ public class BookStore {
 
     public static void main(String[] args) {
 
-        buyBook("Java Programming", 3);
+        buyBook(3);
     }
 }
