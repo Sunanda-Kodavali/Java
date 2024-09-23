@@ -27,22 +27,32 @@ public class SimpleHttpServer {
 
     // Handler to manage incoming requests
     static class MyHandler implements HttpHandler {
+        private final HashMap<Integer, String> cache = new HashMap<>();
         @Override
         public void handle(HttpExchange exchange) throws IOException {
+
+            long tsStart = System.currentTimeMillis();
             // Parse query parameters
             Map<String, String> queryParams = parseQueryParams(exchange.getRequestURI().getQuery());
 
             // Get the "number" parameter from the query string
             String numberParam = queryParams.get("number");
-            String response;
+            String response = "";
 
             if (numberParam != null) {
                 try {
                     int number = Integer.parseInt(numberParam);
                     // Fetch results from the database
-                     response = fetchDataFromDB(number);
-
+                    if (this.cache.containsKey(number)) {
+                        response +=  this.cache.get(number);
+                        System.out.println("reading from cache for number " + number);
+                    } else {
+                        response = fetchDataFromDB(number);
+                        this.cache.put(number, response);
+                    }
                     // Send the response back to the browser
+                    long tsDiff = System.currentTimeMillis() - tsStart;
+                    response += " ( duration=" + tsDiff + " ms )";
                     exchange.sendResponseHeaders(200, response.length());
                     OutputStream os = exchange.getResponseBody();
                     os.write(response.getBytes());
